@@ -1562,7 +1562,7 @@ select:focus {
   margin-top: 76px;
   position: relative;
   overflow: hidden;
-  border-radius: 0 !important; /* Remove rounded corners */
+  border-radius: 0 !important;
 }
 
 .hero-swiper .swiper-slide {
@@ -1572,7 +1572,7 @@ select:focus {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  border-radius: 0 !important; /* Remove rounded corners */
+  border-radius: 0 !important;
 }
 
 .hero-swiper .swiper-slide::before {
@@ -1609,116 +1609,119 @@ select:focus {
   backdrop-filter: blur(8px);
   border: 1px solid rgba(255, 255, 255, 0.3);
   color: white;
-  font-size: clamp(0.7rem, 2vw, 0.85rem);
-  padding: 8px 20px;
+  font-size: clamp(0.6rem, 2vw, 0.85rem);
+  padding: 6px 16px;
   border-radius: 60px;
   letter-spacing: 1.5px;
-  margin-bottom: 25px;
+  margin-bottom: 20px;
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
   white-space: nowrap;
 }
 
 .hero-swiper .badge i {
   color: var(--warm-sand);
-  font-size: 0.9rem;
+  font-size: 0.8rem;
 }
 
 /* Main heading */
 .hero-swiper h1 {
-  font-size: clamp(2rem, 8vw, 4.8rem);
+  font-size: clamp(1.6rem, 8vw, 4.8rem);
   font-weight: 800;
   line-height: 1.1;
   color: white;
-  margin-bottom: 15px;
+  margin-bottom: 12px;
   letter-spacing: 1px;
   word-wrap: break-word;
 }
 
 .hero-swiper h1 span {
   display: block;
-  font-size: clamp(1rem, 4vw, 2.8rem);
-  letter-spacing: clamp(2px, 2vw, 8px);
+  font-size: clamp(0.9rem, 4vw, 2.8rem);
+  letter-spacing: clamp(1px, 2vw, 8px);
   color: white;
-  margin-top: 8px;
+  margin-top: 5px;
   font-weight: 600;
 }
 
 .hero-swiper .lead {
-  font-size: clamp(1rem, 3vw, 1.4rem);
+  font-size: clamp(0.85rem, 3vw, 1.4rem);
   font-family: 'Cormorant Garamond', serif;
-  margin-bottom: 25px;
+  margin-bottom: 20px;
   color: rgba(255, 255, 255, 0.95);
   line-height: 1.4;
 }
 
-/* Stats container - FIXED STYLING for your specific divs */
+/* Stats container - FIXED AND RESPONSIVE */
 .hero-swiper .stats-wrapper {
   display: flex;
   flex-wrap: wrap;
-  gap: clamp(1.5rem, 4vw, 3rem);
-  margin-bottom: 30px;
+  gap: clamp(1rem, 4vw, 3rem);
+  margin-bottom: 25px;
 }
 
 .hero-swiper .stats-wrapper div {
   text-align: left;
+  flex: 0 1 auto;
 }
 
-.hero-swiper .stats-wrapper .h2 {
-  font-size: clamp(1.5rem, 5vw, 2.2rem) !important;
+.hero-swiper .stats-wrapper .h2,
+.hero-swiper .stats-wrapper span:first-child {
+  font-size: clamp(1.1rem, 4vw, 2.2rem) !important;
   font-weight: 700 !important;
   color: white !important;
   margin: 0 !important;
-  line-height: 1.2 !important;
+  line-height: 1.1 !important;
   display: block;
 }
 
 .hero-swiper .stats-wrapper div span:last-child {
-  font-size: clamp(0.65rem, 2vw, 0.8rem);
+  font-size: clamp(0.55rem, 1.8vw, 0.8rem);
   color: rgba(255, 255, 255, 0.8);
   text-transform: uppercase;
   letter-spacing: 1px;
   display: block;
-  margin-top: 5px;
+  margin-top: 4px;
+  white-space: nowrap;
 }
 
 /* Price display - FIXED for second slide */
 .hero-swiper .display-4 {
-  font-size: clamp(1.8rem, 6vw, 3.5rem) !important;
+  font-size: clamp(1.4rem, 6vw, 3.5rem) !important;
   font-weight: 700 !important;
   color: white !important;
-  margin-bottom: 10px !important;
+  margin-bottom: 8px !important;
   line-height: 1.2 !important;
 }
 
 .hero-swiper .display-4 + p {
-  font-size: clamp(0.9rem, 3vw, 1.2rem) !important;
+  font-size: clamp(0.8rem, 3vw, 1.2rem) !important;
   color: rgba(255, 255, 255, 0.9) !important;
-  margin-top: 10px !important;
+  margin-top: 5px !important;
 }
 
 /* Button container */
 .hero-swiper .button-container {
   display: flex;
   flex-wrap: wrap;
-  gap: 15px;
-  margin-top: 25px;
+  gap: 12px;
+  margin-top: 20px;
 }
 
 .hero-swiper .btn-luxury {
   background: var(--soft-gold);
   border: 2px solid transparent;
   color: white;
-  padding: 14px 32px;
+  padding: 12px 28px;
   border-radius: 60px;
   font-weight: 600;
-  letter-spacing: 1.5px;
-  font-size: 0.85rem;
+  letter-spacing: 1.2px;
+  font-size: 0.8rem;
   text-transform: uppercase;
   box-shadow: 0 10px 25px rgba(10, 49, 71, 0.3);
   transition: all 0.3s ease;
-  min-height: 52px;
+  min-height: 48px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -1730,15 +1733,15 @@ select:focus {
   background: transparent;
   border: 2px solid white;
   color: white;
-  padding: 14px 32px;
+  padding: 12px 28px;
   border-radius: 60px;
   font-weight: 600;
-  letter-spacing: 1.5px;
-  font-size: 0.85rem;
+  letter-spacing: 1.2px;
+  font-size: 0.8rem;
   text-transform: uppercase;
   backdrop-filter: blur(5px);
   transition: all 0.3s ease;
-  min-height: 52px;
+  min-height: 48px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -1758,75 +1761,77 @@ select:focus {
   }
 
   .hero-swiper .container {
-    padding: 0 12px;
+    padding: 0 10px;
+  }
+
+  .hero-swiper .badge {
+    font-size: 0.5rem !important;
+    padding: 4px 8px !important;
+    margin-bottom: 6px;
+    letter-spacing: 0.5px;
+    gap: 4px;
+  }
+
+  .hero-swiper .badge i {
+    font-size: 0.6rem;
   }
 
   .hero-swiper h1 {
-    font-size: 1.4rem !important;
-    margin-bottom: 5px;
+    font-size: 1.2rem !important;
+    margin-bottom: 4px;
   }
 
   .hero-swiper h1 span {
-    font-size: 0.8rem !important;
+    font-size: 0.7rem !important;
     letter-spacing: 1px;
     margin-top: 2px;
   }
 
   .hero-swiper .lead {
-    font-size: 0.75rem !important;
-    margin-bottom: 8px;
+    font-size: 0.65rem !important;
+    margin-bottom: 5px;
   }
 
-  .hero-swiper .badge {
-    font-size: 0.55rem !important;
-    padding: 4px 10px !important;
-    margin-bottom: 8px;
-    letter-spacing: 1px;
-  }
-
-  .hero-swiper .badge i {
-    font-size: 0.7rem;
-  }
-
-  /* Stats styling for 300px height */
+  /* Stats styling - EXTRA SMALL */
   .hero-swiper .stats-wrapper {
-    gap: 10px !important;
-    margin-bottom: 8px;
+    gap: 8px !important;
+    margin-bottom: 5px;
   }
 
-  .hero-swiper .stats-wrapper .h2 {
-    font-size: 1rem !important;
+  .hero-swiper .stats-wrapper .h2,
+  .hero-swiper .stats-wrapper span:first-child {
+    font-size: 0.9rem !important;
   }
 
   .hero-swiper .stats-wrapper div span:last-child {
-    font-size: 0.45rem !important;
-    letter-spacing: 0.5px;
-    margin-top: 2px;
+    font-size: 0.4rem !important;
+    letter-spacing: 0.3px;
+    margin-top: 1px;
   }
 
-  /* Price styling for 300px height */
+  /* Price styling */
   .hero-swiper .display-4 {
-    font-size: 1.2rem !important;
-    margin-bottom: 3px !important;
+    font-size: 1rem !important;
+    margin-bottom: 2px !important;
   }
 
   .hero-swiper .display-4 + p {
-    font-size: 0.65rem !important;
-    margin-top: 3px !important;
+    font-size: 0.55rem !important;
+    margin-top: 2px !important;
   }
 
-  /* Button styling for 300px height */
+  /* Button styling */
   .hero-swiper .button-container {
-    gap: 6px;
-    margin-top: 5px;
+    gap: 5px;
+    margin-top: 4px;
   }
 
   .hero-swiper .btn-luxury,
   .hero-swiper .btn-outline-luxury {
-    padding: 6px 10px !important;
-    font-size: 0.55rem !important;
-    min-height: 28px !important;
-    letter-spacing: 0.5px;
+    padding: 4px 8px !important;
+    font-size: 0.5rem !important;
+    min-height: 22px !important;
+    letter-spacing: 0.3px;
     border-width: 1px;
   }
 }
@@ -1839,56 +1844,59 @@ select:focus {
     max-height: 300px !important;
   }
 
+  .hero-swiper .badge {
+    font-size: 0.55rem !important;
+    padding: 4px 10px !important;
+    margin-bottom: 7px;
+  }
+
   .hero-swiper h1 {
-    font-size: 1.6rem !important;
+    font-size: 1.4rem !important;
   }
 
   .hero-swiper h1 span {
-    font-size: 0.9rem !important;
+    font-size: 0.8rem !important;
   }
 
   .hero-swiper .lead {
-    font-size: 0.8rem !important;
-    margin-bottom: 10px;
+    font-size: 0.7rem !important;
+    margin-bottom: 6px;
   }
 
-  .hero-swiper .badge {
-    font-size: 0.6rem !important;
-    padding: 5px 12px !important;
-    margin-bottom: 10px;
-  }
-
+  /* Stats styling - SMALL PHONES */
   .hero-swiper .stats-wrapper {
-    gap: 12px !important;
-    margin-bottom: 10px;
+    gap: 10px !important;
+    margin-bottom: 6px;
   }
 
-  .hero-swiper .stats-wrapper .h2 {
-    font-size: 1.1rem !important;
+  .hero-swiper .stats-wrapper .h2,
+  .hero-swiper .stats-wrapper span:first-child {
+    font-size: 1rem !important;
   }
 
   .hero-swiper .stats-wrapper div span:last-child {
-    font-size: 0.5rem !important;
+    font-size: 0.45rem !important;
+    letter-spacing: 0.4px;
   }
 
   .hero-swiper .display-4 {
-    font-size: 1.3rem !important;
+    font-size: 1.1rem !important;
   }
 
   .hero-swiper .display-4 + p {
-    font-size: 0.7rem !important;
+    font-size: 0.6rem !important;
   }
 
   .hero-swiper .button-container {
-    gap: 8px;
-    margin-top: 8px;
+    gap: 6px;
+    margin-top: 5px;
   }
 
   .hero-swiper .btn-luxury,
   .hero-swiper .btn-outline-luxury {
-    padding: 6px 12px !important;
-    font-size: 0.6rem !important;
-    min-height: 30px !important;
+    padding: 5px 10px !important;
+    font-size: 0.55rem !important;
+    min-height: 24px !important;
   }
 }
 
@@ -1900,56 +1908,59 @@ select:focus {
     max-height: 300px !important;
   }
 
+  .hero-swiper .badge {
+    font-size: 0.6rem !important;
+    padding: 5px 12px !important;
+    margin-bottom: 8px;
+  }
+
   .hero-swiper h1 {
-    font-size: 1.8rem !important;
+    font-size: 1.6rem !important;
   }
 
   .hero-swiper h1 span {
-    font-size: 1rem !important;
+    font-size: 0.9rem !important;
   }
 
   .hero-swiper .lead {
-    font-size: 0.85rem !important;
-    margin-bottom: 12px;
+    font-size: 0.75rem !important;
+    margin-bottom: 8px;
   }
 
-  .hero-swiper .badge {
-    font-size: 0.65rem !important;
-    padding: 6px 14px !important;
-    margin-bottom: 12px;
-  }
-
+  /* Stats styling - MEDIUM PHONES */
   .hero-swiper .stats-wrapper {
-    gap: 15px !important;
-    margin-bottom: 12px;
+    gap: 12px !important;
+    margin-bottom: 8px;
   }
 
-  .hero-swiper .stats-wrapper .h2 {
-    font-size: 1.2rem !important;
+  .hero-swiper .stats-wrapper .h2,
+  .hero-swiper .stats-wrapper span:first-child {
+    font-size: 1.1rem !important;
   }
 
   .hero-swiper .stats-wrapper div span:last-child {
-    font-size: 0.55rem !important;
+    font-size: 0.5rem !important;
+    letter-spacing: 0.5px;
   }
 
   .hero-swiper .display-4 {
-    font-size: 1.4rem !important;
+    font-size: 1.2rem !important;
   }
 
   .hero-swiper .display-4 + p {
-    font-size: 0.75rem !important;
+    font-size: 0.65rem !important;
   }
 
   .hero-swiper .button-container {
-    gap: 10px;
-    margin-top: 10px;
+    gap: 8px;
+    margin-top: 6px;
   }
 
   .hero-swiper .btn-luxury,
   .hero-swiper .btn-outline-luxury {
-    padding: 7px 14px !important;
-    font-size: 0.65rem !important;
-    min-height: 32px !important;
+    padding: 6px 12px !important;
+    font-size: 0.6rem !important;
+    min-height: 28px !important;
   }
 }
 
@@ -1961,6 +1972,75 @@ select:focus {
     max-height: 300px !important;
   }
 
+  .hero-swiper .badge {
+    font-size: 0.65rem !important;
+    padding: 6px 14px !important;
+    margin-bottom: 10px;
+  }
+
+  .hero-swiper h1 {
+    font-size: 1.8rem !important;
+  }
+
+  .hero-swiper h1 span {
+    font-size: 1rem !important;
+  }
+
+  .hero-swiper .lead {
+    font-size: 0.8rem !important;
+    margin-bottom: 10px;
+  }
+
+  /* Stats styling - LARGE PHONES */
+  .hero-swiper .stats-wrapper {
+    gap: 15px !important;
+    margin-bottom: 10px;
+  }
+
+  .hero-swiper .stats-wrapper .h2,
+  .hero-swiper .stats-wrapper span:first-child {
+    font-size: 1.2rem !important;
+  }
+
+  .hero-swiper .stats-wrapper div span:last-child {
+    font-size: 0.55rem !important;
+    letter-spacing: 0.6px;
+  }
+
+  .hero-swiper .display-4 {
+    font-size: 1.4rem !important;
+  }
+
+  .hero-swiper .display-4 + p {
+    font-size: 0.7rem !important;
+  }
+
+  .hero-swiper .button-container {
+    gap: 10px;
+    margin-top: 8px;
+  }
+
+  .hero-swiper .btn-luxury,
+  .hero-swiper .btn-outline-luxury {
+    padding: 7px 14px !important;
+    font-size: 0.65rem !important;
+    min-height: 30px !important;
+  }
+}
+
+/* Small tablets (577px - 768px) - Still 300px height */
+@media (min-width: 577px) and (max-width: 768px) {
+  .hero-swiper {
+    height: 300px !important;
+    min-height: 300px !important;
+    max-height: 300px !important;
+  }
+
+  .hero-swiper .badge {
+    font-size: 0.7rem !important;
+    margin-bottom: 12px;
+  }
+
   .hero-swiper h1 {
     font-size: 2rem !important;
   }
@@ -1970,15 +2050,17 @@ select:focus {
   }
 
   .hero-swiper .lead {
-    font-size: 0.9rem !important;
+    font-size: 0.85rem !important;
   }
 
-  .hero-swiper .badge {
-    font-size: 0.7rem !important;
+  /* Stats styling - TABLETS */
+  .hero-swiper .stats-wrapper {
+    gap: 18px !important;
     margin-bottom: 12px;
   }
 
-  .hero-swiper .stats-wrapper .h2 {
+  .hero-swiper .stats-wrapper .h2,
+  .hero-swiper .stats-wrapper span:first-child {
     font-size: 1.3rem !important;
   }
 
@@ -1991,43 +2073,7 @@ select:focus {
   }
 
   .hero-swiper .display-4 + p {
-    font-size: 0.8rem !important;
-  }
-
-  .hero-swiper .button-container {
-    margin-top: 12px;
-  }
-
-  .hero-swiper .btn-luxury,
-  .hero-swiper .btn-outline-luxury {
-    padding: 8px 16px !important;
-    font-size: 0.7rem !important;
-    min-height: 34px !important;
-  }
-}
-
-/* Small tablets (577px - 768px) - Still 300px height as requested */
-@media (min-width: 577px) and (max-width: 768px) {
-  .hero-swiper {
-    height: 300px !important;
-    min-height: 300px !important;
-    max-height: 300px !important;
-  }
-
-  .hero-swiper h1 {
-    font-size: 2.2rem !important;
-  }
-
-  .hero-swiper h1 span {
-    font-size: 1.3rem !important;
-  }
-
-  .hero-swiper .stats-wrapper .h2 {
-    font-size: 1.4rem !important;
-  }
-
-  .hero-swiper .display-4 {
-    font-size: 1.8rem !important;
+    font-size: 0.75rem !important;
   }
 }
 
@@ -2073,37 +2119,58 @@ select:focus {
     padding: 5px 20px;
   }
 
-  .hero-swiper h1 {
-    font-size: 1.6rem !important;
+  .hero-swiper .badge {
     margin-bottom: 5px;
+    padding: 3px 10px !important;
+    font-size: 0.5rem !important;
+  }
+
+  .hero-swiper h1 {
+    font-size: 1.3rem !important;
+    margin-bottom: 3px;
   }
 
   .hero-swiper h1 span {
-    font-size: 0.9rem !important;
+    font-size: 0.8rem !important;
   }
 
   .hero-swiper .lead {
-    font-size: 0.8rem !important;
-    margin-bottom: 5px;
-  }
-
-  .hero-swiper .badge {
-    margin-bottom: 5px;
-    padding: 4px 12px !important;
+    font-size: 0.65rem !important;
+    margin-bottom: 3px;
   }
 
   .hero-swiper .stats-wrapper {
-    margin-bottom: 5px;
+    margin-bottom: 3px;
+    gap: 10px !important;
+  }
+
+  .hero-swiper .stats-wrapper .h2,
+  .hero-swiper .stats-wrapper span:first-child {
+    font-size: 1rem !important;
+  }
+
+  .hero-swiper .stats-wrapper div span:last-child {
+    font-size: 0.45rem !important;
+  }
+
+  .hero-swiper .display-4 {
+    font-size: 1.1rem !important;
+  }
+
+  .hero-swiper .display-4 + p {
+    font-size: 0.6rem !important;
   }
 
   .hero-swiper .button-container {
-    margin-top: 5px;
+    margin-top: 3px;
+    gap: 6px;
   }
 
   .hero-swiper .btn-luxury,
   .hero-swiper .btn-outline-luxury {
-    padding: 5px 12px !important;
-    min-height: 28px !important;
+    padding: 4px 10px !important;
+    font-size: 0.5rem !important;
+    min-height: 24px !important;
   }
 }
 
@@ -2113,49 +2180,59 @@ select:focus {
     height: 300px !important;
   }
 
-  .hero-swiper h1 {
-    font-size: 1.2rem !important;
-  }
-
-  .hero-swiper h1 span {
-    font-size: 0.7rem !important;
-    letter-spacing: 1px;
-  }
-
-  .hero-swiper .lead {
-    font-size: 0.65rem !important;
-  }
-
   .hero-swiper .badge {
-    font-size: 0.5rem !important;
-    padding: 3px 8px !important;
+    font-size: 0.45rem !important;
+    padding: 3px 6px !important;
+    gap: 3px;
   }
 
-  .hero-swiper .stats-wrapper {
-    gap: 8px !important;
+  .hero-swiper .badge i {
+    font-size: 0.5rem;
   }
 
-  .hero-swiper .stats-wrapper .h2 {
-    font-size: 0.9rem !important;
-  }
-
-  .hero-swiper .stats-wrapper div span:last-child {
-    font-size: 0.4rem !important;
-  }
-
-  .hero-swiper .display-4 {
+  .hero-swiper h1 {
     font-size: 1rem !important;
   }
 
-  .hero-swiper .display-4 + p {
+  .hero-swiper h1 span {
+    font-size: 0.6rem !important;
+    letter-spacing: 0.5px;
+  }
+
+  .hero-swiper .lead {
     font-size: 0.55rem !important;
+  }
+
+  /* Stats styling - EXTRA EXTRA SMALL */
+  .hero-swiper .stats-wrapper {
+    gap: 6px !important;
+    margin-bottom: 3px;
+  }
+
+  .hero-swiper .stats-wrapper .h2,
+  .hero-swiper .stats-wrapper span:first-child {
+    font-size: 0.8rem !important;
+  }
+
+  .hero-swiper .stats-wrapper div span:last-child {
+    font-size: 0.35rem !important;
+    letter-spacing: 0.2px;
+  }
+
+  .hero-swiper .display-4 {
+    font-size: 0.9rem !important;
+  }
+
+  .hero-swiper .display-4 + p {
+    font-size: 0.5rem !important;
   }
 
   .hero-swiper .btn-luxury,
   .hero-swiper .btn-outline-luxury {
-    padding: 4px 8px !important;
-    font-size: 0.5rem !important;
-    min-height: 24px !important;
+    padding: 3px 6px !important;
+    font-size: 0.45rem !important;
+    min-height: 20px !important;
+    letter-spacing: 0.2px;
   }
 }
 
@@ -2179,9 +2256,10 @@ select:focus {
 .hero-swiper h1,
 .hero-swiper .lead,
 .hero-swiper .stats-wrapper .h2,
+.hero-swiper .stats-wrapper span:first-child,
 .hero-swiper .stats-wrapper div span:last-child,
 .hero-swiper .display-4,
 .hero-swiper .display-4 + p,
 .hero-swiper .badge {
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
 }
