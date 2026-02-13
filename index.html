@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <title>Shapoorji Pallonji Minerva | The Vantage Series · Light Luxury</title>
+  <!-- Bootstrap 5 light -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <!-- Swiper for sliders -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <!-- AOS animations -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <!-- Premium fonts: Cormorant Garamond + Inter -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+  <!-- reCAPTCHA v2 -->
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <!-- ===== STARTING POPUP (CONTACT FORM with CROSS) ===== -->
+  <div id="startPopup" class="start-popup">
+    <div class="popup-card" data-aos="fade-up">
+      <span class="popup-cross" id="closeStartPopupCross">&times;</span>
+      <div class="text-center mb-4">
+        <span class="badge bg-champagne px-4 py-3 rounded-pill" style="color: var(--soft-gold); font-size:0.9rem;"><i
+            class="fas fa-crown gold-text me-2"></i>Exclusive Launch</span>
+      </div>
+      <h2 class="serif text-center" style="color: var(--soft-gold); font-size: 2.6rem;">Minerva Vantage</h2>
+      <p class="text-center text-secondary mb-4">Unlock pricing, cost sheet & floor plans</p>
+      <form id="startPopupForm">
+        <input type="text" class="form-control form-control-lg mb-3" placeholder="Full Name" required>
+        <input type="email" class="form-control form-control-lg mb-3" placeholder="Email Address">
+        <input type="tel" class="form-control form-control-lg mb-4" placeholder="Phone Number" required>
+        <button type="submit" class="btn btn-luxury w-100 py-3">Access Exclusive Portfolio →</button>
+      </form>
+      <p class="text-center mt-4"><a href="#" id="closeStartPopupLink" style="color: var(--mushroom);">Browse
+          website</a></p>
+    </div>
+  </div>
+
+  <!-- ===== NAVBAR WITH HAMBURGER ON RIGHT & OFF CANVAS FROM RIGHT (FULLY FIXED) ===== -->
+  <nav class="navbar navbar-expand-lg fixed-top navbar-light">
+    <div class="container">
+
+      <a class="navbar-brand" href="#">MINERVA <span>VANTAGE SERIES</span></a>
+
+      <!-- Desktop menu (hidden on mobile) - correctly positioned -->
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto align-items-center">
+          <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#amenities">Amenities</a></li>
+          <li class="nav-item"><a class="nav-link" href="#residences">Residences</a></li>
+          <li class="nav-item"><a class="nav-link" href="#floorplan">Floor Plans</a></li>
+          <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
+          <li class="nav-item"><a class="nav-link" href="#location">Location</a></li>
+            <li class="nav-item"><a class="nav-link" href="#legacy">Legacy</a></li>
+          <li class="nav-item ms-2"><a class="btn btn-luxury px-4 py-2" href="#" id="brochureBtnDesktop"><i
+                class="fas fa-file-pdf me-2"></i>Brochure</a></li>
+        </ul>
+      </div>
+
+      <!-- ✅ FIXED: Hamburger button on RIGHT side - triggers offcanvas from right (works perfectly) -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+        aria-controls="offcanvasNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- OFFCANVAS MENU (RIGHT SIDE) - includes all nav items and brochure button -->
+  <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="offcanvasNavbarLabel">MINERVA</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+        <li class="nav-item"><a class="nav-link" href="#home" data-bs-dismiss="offcanvas">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#about" data-bs-dismiss="offcanvas">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="#amenities" data-bs-dismiss="offcanvas">Amenities</a></li>
+        <li class="nav-item"><a class="nav-link" href="#residences" data-bs-dismiss="offcanvas">Residences</a></li>
+        <li class="nav-item"><a class="nav-link" href="#floorplan" data-bs-dismiss="offcanvas">Floor Plans</a></li>
+        <li class="nav-item"><a class="nav-link" href="#gallery" data-bs-dismiss="offcanvas">Gallery</a></li>
+        <li class="nav-item"><a class="nav-link" href="#location" data-bs-dismiss="offcanvas">Location</a></li>
+        <li class="nav-item mt-3"><a class="btn btn-luxury w-100" href="#" id="brochureBtnOffcanvas"
+            data-bs-dismiss="offcanvas"><i class="fas fa-file-pdf me-2"></i>Download Brochure</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- HERO SLIDER -->
+  <div class="swiper hero-swiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide" style="background-image: url('IMAGES/home.jpeg');">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-lg-7">
+              <span class="badge bg-white px-4 py-3 mb-4 rounded-pill">
+                <i class="fas fa-crown gold-text me-2"></i>MINERVA · 150+ Years
+              </span>
+              <h1>MINERVA <span>VANTAGE SERIES</span></h1>
+              <p class="lead">Mahalaxmi, South Mumbai</p>
+              <div class="d-flex gap-4 mt-4">
+                <div><span class="h2 fw-bold">300.55m</span><br><span>Iconic Height</span></div>
+                <div><span class="h2 fw-bold">G+91</span><br><span>Floors</span></div>
+                <div><span class="h2 fw-bold">OC</span><br><span>Received</span></div>
+              </div>
+              <div class="mt-4 d-flex gap-3">
+                <a href="#" class="btn btn-luxury">Private Viewing</a>
+                <a href="#" class="btn btn-outline-luxury">Cost Sheet</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-slide" style="background-image: url('IMAGES/home\ 2.webp');">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-lg-7">
+              <span class="badge bg-white px-4 py-3 mb-4 rounded-pill">
+                <i class="fas fa-crown gold-text me-2"></i>Exclusive Pricing Till 15th Dec
+              </span>
+              <h1>LIMITED <span>INVENTORY</span></h1>
+              <p class="lead">Book Now · Fully OC Received</p>
+              <div class="mt-4">
+                <h2 class="display-4 fw-bold" style="color: white;">₹12.99 Cr* Onwards</h2>
+                <p class="mt-3">Luxurious 3.5 & 4 BHK Homes</p>
+              </div>
+              <div class="mt-4 d-flex gap-3">
+                <a href="#" class="btn btn-luxury">Download Brochure</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="swiper-pagination"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+  </div>
+
+  <!-- SIDE BOOKING POPUP -->
+  <div class="booking-popup" id="bookingPopup">
+    <span class="booking-close" onclick="this.parentElement.style.display='none'">&times;</span>
+    <h3 class="serif">🏆 Register Here</h3>
+    <p class="text-secondary">And Avail The Best Offers!!</p>
+    <div class="price-badge">
+      <i class="fas fa-tag me-2"></i> ₹12.99 Cr* Onwards
+    </div>
+    <form id="bookingForm">
+      <input type="text" class="form-control" placeholder="Full Name" required>
+      <input type="email" class="form-control" placeholder="Email Address (Optional)">
+      <div class="d-flex gap-2 mb-3">
+        <select class="form-control" style="width: 100px;">
+          <option>+91</option>
+        </select>
+        <input type="tel" class="form-control" placeholder="Phone Number" required>
+      </div>
+      <button type="submit" class="btn btn-block">Get It Now →</button>
+    </form>
+    </div>
+  </div>
+
+  <!-- ===== COST SHEET + SIDE COSTING IMAGE ===== -->
+  <section class="cost-sheet-section">
+    <div class="container">
+      <div class="row g-5">
+        <!-- LEFT: COST SHEET TABLE -->
+        <div class="col-lg-6">
+          <div class="cost-sheet-table">
+            <h3 class="serif">📊 Shapoorji Pallonji Minerva</h3>
+            <h4 class="serif" style="color: var(--charcoal);">Pricing And Carpet Area</h4>
+            
+            <div class="pricing-table-wrapper">
+              <table class="pricing-table">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Carpet Area</th>
+                    <th>Price</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>3.5 BHK</strong></td>
+                    <td>On Request</td>
+                    <td class="price-highlight">₹12.99 Cr Onwards</td>
+                  </tr>
+                  <tr>
+                    <td><strong>4 BHK</strong></td>
+                    <td>On Request</td>
+                    <td class="price-highlight">₹13.49 Cr Onwards</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="mt-4 d-flex gap-3 flex-wrap">
+              <button class="download-btn">
+                <i class="fas fa-download me-2"></i>Download Costing Details
+              </button>
+              <button class="download-btn" style="background: var(--charcoal);">
+                <i class="fas fa-file-pdf me-2"></i>Download Brochure
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT: COSTING IMAGE SIDE BY SIDE -->
+        <div class="col-lg-6">
+          <div class="costing-image-card">
+            <h4 class="serif">💰 Costing & Payment Plan</h4>
+            <img src="IMAGES/about.jpg" 
+                 alt="Costing Details" 
+                 class="img-fluid"
+                 onerror="this.src='https://via.placeholder.com/600x400/d43b63/ffffff?text=Costing+Details+%26+Payment+Plan'">
+            <div class="mt-3">
+              <span class="costing-badge">
+                <i class="fas fa-file-invoice me-2"></i>Complete Cost Sheet
+              </span>
+              <p class="mt-3 text-secondary">
+                ⚡ Stamp Duty · Registration · Taxes · Payment Plan
+              </p>
+              <button class="btn btn-luxury w-100 mt-2">
+                <i class="fas fa-download me-2"></i>Download Full Cost Sheet
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TOP TO BOTTOM BUTTON -->
+  <div class="top-bottom-btn" id="topBottomBtn">
+    <i class="fas fa-arrow-up"></i>
+  </div>
+
+ 
+  <!-- ===== ABOUT SECTION (WELCOME TO SHAPOORJI) ===== -->
+  <section id="about" class="bg-champagne">
+    <div class="container">
+      <div class="row g-5 align-items-center">
+        <div class="col-lg-6" data-aos="fade-up">
+          <h2 class="section-title">Welcome to Shapoorji Pallonji Minerva</h2>
+          <p class="fs-3 serif" style="color: var(--mushroom);">The pinnacle of ultra-luxury, reserved for the creme de
+            la
+            creme.</p>
+          <div class="mt-4" style="line-height: 1.9;">
+            <p>Shapoorji Pallonji Minerva is an exquisite edifice in the prime lanes of Mahalaxmi, South Mumbai. This
+              tallest residential tower in India presents its Vantage series of 3.5 BHK and 4 BHK apartments.
+              Uninterrupted views of the Arabian Sea and the Mahalakshmi Race Course. Designed by Hafeez Contractor,
+              interiors by HBA Singapore.</p>
+            <p class="mt-3">Amenities include pool lounge, golf simulator, banquet hall, cricket pitch, business centre,
+              mini theatre, gymnasium, yoga deck, and the highest viewing deck in the city.</p>
+          </div>
+          <div class="row mt-5">
+            <div class="col-6"><i class="fas fa-check-circle gold-text me-2"></i> RERA: P51900008204</div>
+            <div class="col-6"><i class="fas fa-check-circle gold-text me-2"></i> Possession: OC received</div>
+          </div>
+          <button class="btn btn-luxury mt-5" id="aboutBrochureBtn"><i class="fas fa-download me-2"></i>Download
+            Brochure</button>
+        </div>
+        <div class="col-lg-6" data-aos="fade-up" data-aos-delay="150">
+          <img src="IMAGEs/about.jpg" alt="Minerva lobby" class="img-fluid rounded-5 shadow"
+            style="border-radius: 40px;">
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- KEY HIGHLIGHTS – statue comparison, viewing deck, curated maisons -->
+  <section id="highlights" style="padding:100px 0; background:white;">
+    <div class="container">
+      <h2 class="section-title">Key Highlights</h2>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="highlight-card" style="background:white; border-radius:40px; padding:45px 25px; text-align:center; box-shadow:0 15px 35px rgba(0,0,0,0.02); height:100%;">
+            <div style="font-size:4rem; color:var(--antique-gold); margin-bottom:20px;"><i class="fas fa-ruler-combined"></i></div>
+            <h3 class="serif fs-2" style="color:var(--deep-burgundy);">300.55 m</h3>
+            <p class="text-secondary">India's tallest residential tower</p>
+            <div class="mt-3" style="background:#faf3ef; padding:15px; border-radius:30px;">
+              <span class="small text-muted">Statue of Belief: 112.4m | Statue of Unity: 182m</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="highlight-card" style="background:white; border-radius:40px; padding:45px 25px; text-align:center; box-shadow:0 15px 35px rgba(0,0,0,0.02); height:100%;">
+            <div style="font-size:4rem; color:var(--antique-gold); margin-bottom:20px;"><i class="fas fa-eye"></i></div>
+            <h3 class="serif fs-2" style="color:var(--deep-burgundy);">Highest Viewing Deck</h3>
+            <p class="text-secondary">360° views · Arabian Sea & Racecourse</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="highlight-card" style="background:white; border-radius:40px; padding:45px 25px; text-align:center; box-shadow:0 15px 35px rgba(0,0,0,0.02); height:100%;">
+            <div style="font-size:4rem; color:var(--antique-gold); margin-bottom:20px;"><i class="fas fa-building"></i></div>
+            <h3 class="serif fs-2" style="color:var(--deep-burgundy);">Curated Maisons</h3>
+            <p class="text-secondary">3.5 & 4 BHK ultra-luxury residences</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== COST SHEET & PRICE SHEET WITH LUXURY IMAGES ===== -->
+  <!-- ===== LIFESTYLE & EXPERIENCE ===== -->
+  <section id="lifestyle" class="bg-pure-white">
+    <div class="container">
+      <h2 class="section-title text-center mb-5">Lifestyle & Experience</h2>
+      <div class="row g-4">
+        <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+          <div class="position-relative overflow-hidden rounded-5 shadow-lg" style="height: 400px;">
+            <img src="IMAGES/Sky-High Living.jpg" alt="Sky High Living"
+              class="w-100 h-100 object-fit-cover transition-transform" style="transition: transform 0.5s;">
+            <div class="position-absolute bottom-0 start-0 w-100 p-4"
+              style="background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);">
+              <h3 class="serif text-white mb-1">Sky High Living</h3>
+              <p class="text-white-50 mb-0">Elevate your perspective</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
+          <div class="position-relative overflow-hidden rounded-5 shadow-lg" style="height: 400px;">
+            <img src="IMAGES/Own the Horizon.jpg" alt="Own the Horizon"
+              class="w-100 h-100 object-fit-cover transition-transform" style="transition: transform 0.5s;">
+            <div class="position-absolute bottom-0 start-0 w-100 p-4"
+              style="background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);">
+              <h3 class="serif text-white mb-1">Own the Horizon</h3>
+              <p class="text-white-50 mb-0">Uninterrupted panoramic views</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
+          <div class="position-relative overflow-hidden rounded-5 shadow-lg" style="height: 400px;">
+            <img src="IMAGES/Beyond Indulgence.jpg" alt="Beyond Indulgence"
+              class="w-100 h-100 object-fit-cover transition-transform" style="transition: transform 0.5s;">
+            <div class="position-absolute bottom-0 start-0 w-100 p-4"
+              style="background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);">
+              <h3 class="serif text-white mb-1">Beyond Indulgence</h3>
+              <p class="text-white-50 mb-0">Luxury that unwinds with you</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== VANTAGE SERIES CONFIGURATIONS ===== -->
+  <section id="configurations" style="background: var(--champagne);">
+    <div class="container">
+      <h2 class="section-title text-center mb-5">The Vantage Series</h2>
+      <p class="text-center text-secondary fs-5 mb-5" style="max-width: 700px; margin: 0 auto;">Exclusive high-rise
+        residences offering 270° views of the Arabian Sea and Racecourse. Limited inventory for the discerning few.</p>
+
+      <div class="row g-4 justify-content-center">
+        <!-- 3.5 BHK Card -->
+        <div class="col-lg-3 col-md-6">
+          <div class="bg-white p-4 rounded-4 shadow-sm h-100 text-center border-0 hover-lift">
+            <h3 class="serif fs-4 mb-3" style="color: var(--soft-gold);">3.5 BHK</h3>
+            <hr style="width: 40px; margin: 0 auto 20px; border-top: 2px solid var(--soft-gold); opacity: 1;">
+            <p class="mb-1 text-secondary">Carpet Area</p>
+            <p class="fw-bold fs-5 mb-3">2,058 sq.ft.</p>
+            <p class="mb-1 text-secondary">Starting Price</p>
+            <p class="fw-bold fs-4" style="color: var(--soft-gold);">₹13.50 Cr<span class="fs-6 text-muted">*</span></p>
+            <button class="btn btn-outline-luxury btn-sm mt-3 w-100"
+              onclick="showPopup('Enquire 3.5 BHK', 'Learn more about 3.5 BHK availability.')">View Details</button>
+          </div>
+        </div>
+
+        <!-- 4 BHK Luxury Card -->
+        <div class="col-lg-3 col-md-6">
+          <div class="bg-white p-4 rounded-4 shadow-sm h-100 text-center border-0 hover-lift">
+            <div class="badge bg-champagne text-dark mb-3 px-3 py-1 rounded-pill"
+              style="color: var(--soft-gold) !important; font-size: 0.8rem;">BEST SELLER</div>
+            <h3 class="serif fs-4 mb-3" style="color: var(--soft-gold);">4 BHK Luxury</h3>
+            <hr style="width: 40px; margin: 0 auto 20px; border-top: 2px solid var(--soft-gold); opacity: 1;">
+            <p class="mb-1 text-secondary">Carpet Area</p>
+            <p class="fw-bold fs-5 mb-3">2,019 sq.ft.</p>
+            <p class="mb-1 text-secondary">Starting Price</p>
+            <p class="fw-bold fs-4" style="color: var(--soft-gold);">₹14.25 Cr<span class="fs-6 text-muted">*</span></p>
+            <button class="btn btn-luxury btn-sm mt-3 w-100"
+              onclick="showPopup('Enquire 4 BHK Luxury', 'Learn more about 4 BHK Luxury availability.')">View
+              Details</button>
+          </div>
+        </div>
+
+        <!-- 4 BHK Grand Card -->
+        <div class="col-lg-3 col-md-6">
+          <div class="bg-white p-4 rounded-4 shadow-sm h-100 text-center border-0 hover-lift">
+            <h3 class="serif fs-4 mb-3" style="color: var(--soft-gold);">4 BHK Grand</h3>
+            <hr style="width: 40px; margin: 0 auto 20px; border-top: 2px solid var(--soft-gold); opacity: 1;">
+            <p class="mb-1 text-secondary">Carpet Area</p>
+            <p class="fw-bold fs-5 mb-3">2,136 sq.ft.</p>
+            <p class="mb-1 text-secondary">Starting Price</p>
+            <p class="fw-bold fs-4" style="color: var(--soft-gold);">₹16.00 Cr<span class="fs-6 text-muted">*</span></p>
+            <button class="btn btn-outline-luxury btn-sm mt-3 w-100"
+              onclick="showPopup('Enquire 4 BHK Grand', 'Learn more about 4 BHK Grand availability.')">View
+              Details</button>
+          </div>
+        </div>
+
+        <!-- Duplex / Penthouse Card -->
+        <div class="col-lg-3 col-md-6">
+          <div class="bg-white p-4 rounded-4 shadow-sm h-100 text-center border-0 hover-lift">
+            <h3 class="serif fs-4 mb-3" style="color: var(--soft-gold);">Duplex</h3>
+            <hr style="width: 40px; margin: 0 auto 20px; border-top: 2px solid var(--soft-gold); opacity: 1;">
+            <p class="mb-1 text-secondary">Carpet Area</p>
+            <p class="fw-bold fs-5 mb-3">3,420+ sq.ft.</p>
+            <p class="mb-1 text-secondary">Starting Price</p>
+            <p class="fw-bold fs-4" style="color: var(--soft-gold);">On Request</p>
+            <button class="btn btn-outline-luxury btn-sm mt-3 w-100"
+              onclick="showPopup('Enquire Duplex', 'Learn more about Duplex availability.')">View Details</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center mt-5">
+        <p class="small text-muted">*Prices are indicative and subject to change. Government taxes extra.</p>
+      </div>
+    </div>
+  </section>
+  <!-- LEGACY – Shapoorji Pallonji 150+ years & Lokhandwala -->
+  <section id="legacy" style="background:var(--soft-rose); padding:100px 0;">
+    <div class="container">
+      <div class="row g-5 align-items-center">
+        <div class="col-lg-6">
+          <h2 class="section-title section-title-left" style="text-align:left;">Legacy of Trust</h2>
+          <p class="fs-3 serif" style="color:var(--deep-burgundy);">Shapoorji Pallonji · 150+ years</p>
+          <p style="font-size:1.1rem; line-height:1.8;">It's over 150 years since we began giving the world iconic landmarks across 40 countries. We're home to 16+ companies and over 40,000 employees who strive every day to push innovation, luxury, and ease, way above and beyond. We've built over 18.5 million square metres in India alone. And we're proud to be associated with The Minerva.</p>
+          <p class="mt-4" style="font-size:1.1rem;"><span class="fw-bold" style="color:var(--deep-burgundy);">Lokhandwala Infrastructure</span> – With a legacy of three decades, Lokhandwala has developed prestigious projects in Mumbai and Dubai. Our corporate philosophy 'Rise Above' moves us to exceed expectations.</p>
+          <div class="mt-5 d-flex gap-4 flex-wrap">
+            <span style="background:white; padding:12px 24px; border-radius:60px; box-shadow:0 5px 15px rgba(0,0,0,0.02);"><i class="fas fa-trophy" style="color:var(--antique-gold); margin-right:10px;"></i> Palace of the Sultan of Oman</span>
+            <span style="background:white; padding:12px 24px; border-radius:60px; box-shadow:0 5px 15px rgba(0,0,0,0.02);"><i class="fas fa-building" style="color:var(--antique-gold); margin-right:10px;"></i> Zahra, Worli</span>
+            <span style="background:white; padding:12px 24px; border-radius:60px; box-shadow:0 5px 15px rgba(0,0,0,0.02);"><i class="fas fa-tree" style="color:var(--antique-gold); margin-right:10px;"></i> Eden Garden, Dubai</span>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <img src="IMAGES/4.jpg" class="img-fluid rounded-5 shadow" style="border-radius:40px; border:8px solid white; transform:rotate(2deg);" alt="Legacy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== DOCUMENTS & REGULATORY (MahaRERA) ===== -->
+  <section id="documents" style="background: var(--bg-champagne);">
+    <div class="container">
+      <h2 class="section-title">Project Essentials</h2>
+      <div class="row g-4 justify-content-center">
+        <!-- RERA Card -->
+        <div class="col-md-4">
+          <div class="sheet-card">
+            <i class="fas fa-university fa-5x mb-4" style="color: var(--soft-gold);"></i>
+            <h3 class="serif fs-2" style="color: var(--soft-gold);">MahaRERA</h3>
+            <p class="text-secondary mb-4">Registration No: P51900008204<br>Possession: OC Received</p>
+            <button class="btn btn-outline-luxury px-4"
+              onclick="window.open('https://maharera.mahaonline.gov.in', '_blank' , 'noopener noreferrer')"><i
+                class="fas fa-external-link-alt me-2"></i>Verify details</button>
+          </div>
+        </div>
+        <!-- Cost Sheet Card -->
+        <div class="col-md-4">
+          <div class="sheet-card">
+            <i class="fas fa-file-invoice-dollar fa-5x mb-4" style="color: var(--soft-gold);"></i>
+            <h3 class="serif fs-2" style="color: var(--soft-gold);">Cost Sheet</h3>
+            <p class="text-secondary mb-4">Detailed payment plan, duties & taxes breakdown.</p>
+            <button class="btn btn-luxury px-4" id="costSheetBtn"><i class="fas fa-download me-2"></i>Download
+              PDF</button>
+          </div>
+        </div>
+        <!-- Price Sheet Card -->
+        <div class="col-md-4">
+          <div class="sheet-card">
+            <i class="fas fa-tags fa-5x mb-4" style="color: var(--soft-gold);"></i>
+            <h3 class="serif fs-2" style="color: var(--soft-gold);">Price Sheet</h3>
+            <p class="text-secondary mb-4">3.5 BHK from ₹12.99 Cr*<br>4 BHK from ₹13.49 Cr*</p>
+            <button class="btn btn-luxury px-4" id="priceSheetBtn"><i class="fas fa-download me-2"></i>Download
+              PDF</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== AMENITIES · CINEMATIC SLIDER ===== -->
+  <section id="amenities" style="background: var(--champagne);">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2 class="section-title mb-0">Amenities</h2>
+        <p class="fs-4 serif text-secondary">World‑class leisure, reimagined</p>
+        <button class="btn btn-outline-luxury mt-3" id="downloadAmenitiesBtn"><i
+            class="fas fa-download me-2"></i>Download
+          List</button>
+      </div>
+      <div class="swiper amenitySwiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide"><img src="IMAGES/Swimming Pool.jpg" alt="Swimming Pool">
+            <div class="amenity-caption">Infinity Swimming Pool</div>
+          </div>
+          <div class="swiper-slide"><img src="IMAGES/Golf Simulator.jpg" alt="Golf Simulator">
+            <div class="amenity-caption">Golf Simulator</div>
+          </div>
+          <div class="swiper-slide"><img src="IMAGES/Jacuzzi.jpg" alt="Jacuzzi">
+            <div class="amenity-caption">Jacuzzi & Steam</div>
+          </div>
+          <div class="swiper-slide"><img src="IMAGES/Mini Theatre.jpg" alt="Mini Theatre">
+            <div class="amenity-caption">Mini Theatre</div>
+          </div>
+          <div class="swiper-slide"><img src="IMAGES/Spa.jpg" alt="Spa">
+            <div class="amenity-caption">Spa & Wellness</div>
+          </div>
+          <div class="swiper-slide"><img src="IMAGES/Business Centre.jpg" alt="Business Centre">
+            <div class="amenity-caption">Business Centre</div>
+          </div>
+          <div class="swiper-slide"><img src="IMAGES/Library.jpg" alt="Library">
+            <div class="amenity-caption">Library</div>
+          </div>
+          <div class="swiper-slide"><img src="IMAGES/Salon.jpg" alt="Salon">
+            <div class="amenity-caption">Luxury Salon</div>
+          </div>
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+    </div>
+  </section>
+  <!-- PARTNERS – from PDF page 32 -->
+  <section style="background:white; padding:80px 0;">
+    <div class="container">
+      <h2 class="section-title">Our Esteemed Partners</h2>
+      <div class="row g-3 justify-content-center">
+        <div class="col-md-2 col-4"><div class="bg-light p-3 rounded-5 text-center" style="background:#faf6f0 !important; font-weight:600;">Hafeez Contractor</div></div>
+        <div class="col-md-2 col-4"><div class="bg-light p-3 rounded-5 text-center" style="background:#faf6f0 !important; font-weight:600;">Site Concepts</div></div>
+        <div class="col-md-2 col-4"><div class="bg-light p-3 rounded-5 text-center" style="background:#faf6f0 !important; font-weight:600;">HBA Singapore</div></div>
+        <div class="col-md-2 col-4"><div class="bg-light p-3 rounded-5 text-center" style="background:#faf6f0 !important; font-weight:600;">Larsen & Toubro</div></div>
+        <div class="col-md-2 col-4"><div class="bg-light p-3 rounded-5 text-center" style="background:#faf6f0 !important; font-weight:600;">RWDl, Canada</div></div>
+        <div class="col-md-2 col-4"><div class="bg-light p-3 rounded-5 text-center" style="background:#faf6f0 !important; font-weight:600;">Windtech</div></div>
+        <div class="col-md-2 col-4"><div class="bg-light p-3 rounded-5 text-center" style="background:#faf6f0 !important; font-weight:600;">Ministry of Light</div></div>
+        <div class="col-md-2 col-4"><div class="bg-light p-3 rounded-5 text-center" style="background:#faf6f0 !important; font-weight:600;">Lerch Bates</div></div>
+        <div class="col-md-2 col-4"><div class="bg-light p-3 rounded-5 text-center" style="background:#faf6f0 !important; font-weight:600;">J+W Consultants</div></div>
+        <div class="col-md-2 col-4"><div class="bg-light p-3 rounded-5 text-center" style="background:#faf6f0 !important; font-weight:600;">INGSOPHY</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FLOOR PLANS (IMAGES) ===== -->
+  <section id="floorplan">
+    <div class="container">
+      <h2 class="section-title">Floor Plans</h2>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="floor-card">
+            <img src="IMAGES/11.jpg" alt="3.5 BHK" class="floor-img">
+            <h3 class="serif fs-2" style="color: var(--soft-gold);">3.5 BHK</h3>
+            <p class="text-secondary">Carpet: 1845 sq.ft · Deck: 27.03 m²<br>Total 2058 sq.ft</p>
+            <button class="btn btn-outline-luxury mt-2 floorPlanBtn" data-plan="3.5 BHK"><i
+                class="fas fa-download me-2"></i>Download Plan</button>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="floor-card">
+            <img src="IMAGES/12.jpg" alt="4 BHK 2136" class="floor-img">
+            <h3 class="serif fs-2" style="color: var(--soft-gold);">4 BHK (2136)</h3>
+            <p class="text-secondary">Carpet: 1845 sq.ft · Deck: 291 sq.ft<br>Total 2136 sq.ft</p>
+            <button class="btn btn-outline-luxury mt-2 floorPlanBtn" data-plan="4 BHK 2136"><i
+                class="fas fa-download me-2"></i>Download Plan</button>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="floor-card">
+            <img src="IMAGES/10.jpg" alt="4 BHK 2019" class="floor-img">
+            <h3 class="serif fs-2" style="color: var(--soft-gold);">4 BHK (2019)</h3>
+            <p class="text-secondary">Carpet: 1741 sq.ft · Deck: 278 sq.ft<br>Total 2019 sq.ft</p>
+            <button class="btn btn-outline-luxury mt-2 floorPlanBtn" data-plan="4 BHK 2019"><i
+                class="fas fa-download me-2"></i>Download Plan</button>
+          </div>
+        </div>
+      </div>
+      <div class="text-center mt-5">
+        <button class="btn btn-luxury btn-lg" id="masterPlanBtn"><i class="fas fa-map me-2"></i>Download Master
+          Plan</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== VIRTUAL TOUR ===== -->
+  <section id="virtual-tour" class="bg-pure-white">
+    <div class="container text-center">
+      <h2 class="section-title">Virtual Tour</h2>
+      <div class="video-container shadow-lg rounded-5 overflow-hidden" data-aos="zoom-in"
+        style="max-width: 900px; margin: 0 auto;">
+        <video controls poster="IMAGES/home.jpeg" style="width: 100%; display: block;">
+          <source src="IMAGES/Minerva_25-04-2024 (3) (2).mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== GALLERY SLIDER ===== -->
+  <section id="gallery" style="background: var(--champagne);">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2 class="section-title">Gallery</h2>
+        <button class="btn btn-outline-luxury mt-3" id="downloadGalleryBtn"><i class="fas fa-download me-2"></i>Download
+          Gallery</button>
+      </div>
+      <div class="swiper gallerySwiper mt-4">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide"><img src="IMAGES/Reception.jpg" alt="Interior"></div>
+          <div class="swiper-slide"><img src="IMAGES/1.jpg" alt="Pool"></div>
+          <div class="swiper-slide"><img src="IMAGES/2.jpg" alt="Facade"></div>
+          <div class="swiper-slide"><img src="IMAGES/3.jpg" alt="Sea"></div>
+           <div class="swiper-slide"><img src="IMAGES/Golf Simulator.jpg" alt="Sea"></div>
+           <div class="swiper-slide"><img src="IMAGES/Jacuzzi.jpg " alt="Sea"></div>
+           <div class="swiper-slide"><img src="IMAGES/Salon.jpg " alt="Sea"></div>
+          
+        </div>
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== LOCATION ===== -->
+  <section id="location">
+    <div class="container">
+      <h2 class="section-title">Location · Mahalaxmi</h2>
+      <div class="row g-4">
+        <div class="col-md-6">
+          <img src="IMAGES/location.jpg" class="img-fluid rounded-5 shadow" alt="South Mumbai">
+          <ul class="list-unstyled mt-4">
+            <li class="mb-2"><i class="fas fa-location-dot gold-text me-2"></i> Mahalaxmi Racecourse – 3.0 km</li>
+            <li class="mb-2"><i class="fas fa-location-dot gold-text me-2"></i> Breach Candy Hospital – 2.2 km</li>
+            <li class="mb-2"><i class="fas fa-location-dot gold-text me-2"></i> DY Patil International – 5.0 km</li>
+            <li class="mb-2"><i class="fas fa-location-dot gold-text me-2"></i> Palladium / Atria – 3.5 km</li>
+          </ul>
+        </div>
+
+        <div class="col-md-6">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3773.5319!2d72.8198!3d18.9805!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7ce5b5e7e4f0b%3A0x6b1e2c1f1b2b2b2b!2sMahalaxmi%2C%20Mumbai!5e0!3m2!1sen!2sin!4v1700000000000"
+            width="100%" height="300" style="border:0; border-radius: 30px;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+        
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- VANTAGE SERIES -->
+  <section id="about" class="bg-soft-rose" style="padding:120px 0;">
+    <div class="container">
+      <div class="row g-5 align-items-center">
+        <div class="col-lg-6" data-aos="fade-up">
+          <h2 class="section-title section-title-left" style="text-align:left;">The Vantage Series</h2>
+          <p class="fs-3 serif" style="color: var(--deep-burgundy);">The opportunity to live way above and beyond.</p>
+          <div style="line-height: 1.9; color: #4a4643;">
+            <p>The Vantage series at The Minerva embodies the pinnacle of luxury living and has been exclusively reserved for the last. One of the most iconic residential towers in India where the crème de la crème of the city lives, it's the address of grandeur. With premium 3.5 and 4 bedroom residences, it is a masterpiece towering above all and built for the discerning few.</p>
+            <p class="mt-3">It's home to the most spectacular views of the Eastern seaboard and the Western shore of the Arabian Sea. The Vantage Series goes way above and beyond what you'd expect from a home in Mumbai's most sought-after neighbourhood.</p>
+          </div>
+          <div class="row mt-5">
+            <div class="col-6"><i class="fas fa-check-circle" style="color:var(--antique-gold); margin-right:10px;"></i> RERA: P51900008204</div>
+            <div class="col-6"><i class="fas fa-check-circle" style="color:var(--antique-gold); margin-right:10px;"></i> OC Received</div>
+          </div>
+          <button class="btn btn-luxury mt-5" id="aboutBrochureBtn"><i class="fas fa-download me-2"></i>Download Brochure</button>
+        </div>
+        <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+          <img src="IMAGES/5.jpg" alt="Minerva lobby" class="img-fluid rounded-5 shadow" style="border-radius:40px; border:8px solid white; box-shadow:0 30px 50px rgba(122,31,61,0.15);">
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ===== CONTACT SECTION (CENTERED INQUIRE NOW) ===== -->
+  <section id="contact" style="background: var(--champagne);">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="contact-card">
+            <h2 class="section-title">Inquire Now</h2>
+            <p class="text-center fs-5 serif mb-5 text-secondary">Our team will respond within 30 minutes</p>
+            <form id="contactForm">
+              <div class="row g-4">
+                <div class="col-md-6"><input type="text" class="form-control form-control-lg" placeholder="Full Name"
+                    id="contactName" required></div>
+                <div class="col-md-6"><input type="email" class="form-control form-control-lg"
+                    placeholder="Email Address" id="contactEmail" required></div>
+                <div class="col-12"><input type="tel" class="form-control form-control-lg" placeholder="Phone Number"
+                    id="contactPhone" required></div>
+                <div class="col-12"><textarea class="form-control form-control-lg" rows="3"
+                    placeholder="Your Message (optional)" id="contactMessage"></textarea></div>
+                <div class="col-12">
+                  <div class="g-recaptcha" data-sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI" data-callback="onRecaptchaSuccess" data-expired-callback="onRecaptchaExpired"></div>
+                  <small class="text-danger d-none" id="recaptchaError">Please verify that you're not a robot</small>
+                </div>
+                <div class="col-12"><button type="submit" class="btn btn-luxury w-100 py-3 fs-6">Send Enquiry <i
+                      class="fas fa-arrow-right ms-2"></i></button></div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== AI CHATBOT TOGGLE ICON (SYMBOL) ===== -->
+  <div class="chat-toggle-icon" id="chatToggleIcon">
+    <i class="fas fa-comment-dots"></i>
+  </div>
+
+  <!-- ===== AI CHATBOT WINDOW (POOJA AGARWAL) with CLOSE BUTTON ===== -->
+  <div id="aiChatbot" class="ai-chatbot">
+    <div class="chat-header">
+      <div class="chat-avatar">
+        <i class="fas fa-circle-user"></i>
+      </div>
+      <div>
+        <h4 class="serif mb-0" style="color: var(--charcoal);">Pooja Agarwal</h4>
+        <span class="text-secondary"><i class="fas fa-circle" style="color: #6fcf97; font-size: 0.6rem;"></i> Online ·
+          AI Assistant</span>
+      </div>
+      <span class="chat-close-btn" id="chatCloseBtn">&times;</span>
+    </div>
+    <div class="chat-body">
+      <div class="chat-message" id="chatMessageDisplay">
+        <i class="fas fa-quote-left gold-text me-1"></i> Hello! I'm Pooja. How can I assist you with Minerva Vantage?
+      </div>
+      <div class="chat-input-group">
+        <input type="text" class="chat-input" id="chatInput" placeholder="Type your question...">
+        <button class="btn btn-luxury" id="chatSendBtn"><i class="fas fa-paper-plane"></i></button>
+      </div>
+      <div class="mt-3 small text-secondary">Ask about pricing, floor plans, or site visit</div>
+    </div>
+  </div>
+
+  <!-- ===== GENERIC POPUP (for downloads, with cross button) ===== -->
+  <div id="genericPopup" class="generic-popup">
+    <div class="popup-card">
+      <span class="popup-cross" onclick="document.getElementById('genericPopup').style.display='none'">&times;</span>
+      <h3 id="popupTitle" class="serif" style="color: var(--soft-gold); font-size: 2rem;">Download</h3>
+      <p id="popupDesc" class="mb-4 fs-5">Please provide your details</p>
+      <form id="genericForm">
+        <input type="text" class="form-control form-control-lg mb-3" placeholder="Full Name" required>
+        <input type="email" class="form-control form-control-lg mb-3" placeholder="Email Address">
+        <input type="tel" class="form-control form-control-lg mb-4" placeholder="Phone Number" required>
+        <button type="submit" class="btn btn-luxury w-100">Download Now</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer-luxury">
+    <div class="container">
+      <div class="row mb-5">
+        <!-- Brand Section -->
+        <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
+          <div class="footer-brand">
+            <h3 class="serif" style="color: var(--soft-gold); font-size: 1.8rem;">Minerva</h3>
+            <p class="footer-tagline mt-2">The Vantage Series · Light Luxury Living</p>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="col-lg-2 col-md-6 mb-4 mb-lg-0">
+          <h5 class="serif footer-title">Explore</h5>
+          <div class="footer-links mt-3">
+            <a href="#home"><i class="fas fa-angle-right me-2"></i>Home</a>
+            <a href="#about"><i class="fas fa-angle-right me-2"></i>About</a>
+            <a href="#amenities"><i class="fas fa-angle-right me-2"></i>Amenities</a>
+            <a href="#floorplan"><i class="fas fa-angle-right me-2"></i>Floor Plans</a>
+            <a href="#gallery"><i class="fas fa-angle-right me-2"></i>Gallery</a>
+            <a href="#location"><i class="fas fa-angle-right me-2"></i>Location</a>
+          </div>
+        </div>
+
+      <!-- Divider -->
+      <hr class="footer-divider">
+        <p class="footer-disclaimer small mt-4 mb-0 text-center">
+          <i class="fas fa-info-circle me-2" style="color: var(--soft-gold);"></i>
+          Project by Lokhandwala Kataria Construction Pvt. Ltd. Shapoorji Pallonji is marketing consultant. 
+          Prices start from ₹14.22 Cr* for 38th floor, 2136 sq.ft. Verify via RERA.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- SCRIPTS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>
